@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TemperatureService } from '../shared/temperature.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private temperatureService: TemperatureService) { }
 
   ngOnInit(): void {
-  }
 
+    this.mafonction()
+  }
+  mafonction() {
+    this.temperatureService.getTemperature().subscribe(res => {
+      console.log('Err', res)
+    }, err => {
+      console.log('Err', err)
+    })
+  }
 }

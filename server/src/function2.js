@@ -61,7 +61,7 @@ function saveData(myData) {
   }).save();
 }
 
-function getData() {
+async function getData() {
   await DataType.TemperatureData.find({}, fieldsIWant, function (err, result) {
     if (err) {
       console.log(err);

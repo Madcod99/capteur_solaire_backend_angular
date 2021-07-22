@@ -18,7 +18,7 @@ The app will use a schema with name `app` and a collection with name `products`.
 First run `npm install`.
 
 Run `npm start` for a Express server. Navigate to `http://localhost:8080/api/status`. The result will be `{"status":"UP"}`.
-
+ 
 Run `ng serve --proxy-config proxy.config.json` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding

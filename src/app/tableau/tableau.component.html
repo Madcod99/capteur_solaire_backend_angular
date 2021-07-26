@@ -1,0 +1,107 @@
+<div *ngIf="displaytable; else noData;">
+    <!-- Area Chart -->
+    <div class="col-xl-12 col-lg-12">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Tableau des enregistrements</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <table class="table table-bordered">
+                                    <col>
+                                    <colgroup span="2"></colgroup>
+                                    <colgroup span="5"></colgroup>
+                                    <colgroup span="5"></colgroup>
+                                    <tr>
+                                        <td rowspan="2">DATE-HEURE</td>
+                                        <th colspan="5" scope="colgroup">VITRE</th>
+                                        <th colspan="5" scope="colgroup">ABSORBEUR</th>
+                                        <th colspan="11" scope="colgroup">AIR</th>
+                                    </tr>
+                                    <tr>
+
+                                        <th scope="col">Tv1</th>
+                                        <th scope="col">Tv2</th>
+                                        <th scope="col">Tv3</th>
+                                        <th scope="col">Tv4</th>
+                                        <th scope="col">Tv5</th>
+
+                                        <th scope="col">Tab1</th>
+                                        <th scope="col">Tab2</th>
+                                        <th scope="col">Tab3</th>
+                                        <th scope="col">Tab4</th>
+                                        <th scope="col">Tab5</th>
+
+                                        <th scope="col">Te1</th>
+                                        <th scope="col">Te2</th>
+                                        <th scope="col">Te3</th>
+
+                                        <th scope="col">Ts1</th>
+                                        <th scope="col">Ts2</th>
+                                        <th scope="col">Ts3</th>
+
+                                        <th scope="col">H1</th>
+                                        <th scope="col">H2</th>
+                                        <th scope="col">H3</th>
+                                        <th scope="col">H4</th>
+                                        <th scope="col">H5</th>
+                                    </tr>
+
+                                    <tr *ngFor="let item of data | paginate: { itemsPerPage: 10, currentPage: p }">
+                                        <th scope="row">{{item.date | date:'medium'}}</th>
+
+                                        <td>{{item.lm35.Tv1}}</td>
+                                        <td>{{item.lm35.Tv2}}</td>
+                                        <td>{{item.lm35.Tv3}}</td>
+                                        <td>{{item.lm35.Tv4}}</td>
+                                        <td>{{item.lm35.Tv5}}</td>
+
+                                        <td>{{item.lm35.Tab1}}</td>
+                                        <td>{{item.lm35.Tab2}}</td>
+                                        <td>{{item.lm35.Tab3}}</td>
+                                        <td>{{item.lm35.Tab4}}</td>
+                                        <td>{{item.lm35.Tab5}}</td>
+
+                                        <td>{{item.lm35.Te1}}</td>
+                                        <td>{{item.lm35.Te2}}</td>
+                                        <td>{{item.lm35.Te3}}</td>
+
+                                        <td>{{item.lm35.Ts1}}</td>
+                                        <td>{{item.lm35.Ts2}}</td>
+                                        <td>{{item.lm35.Ts3}}</td>
+
+                                        <td>{{item.dht.DHT0}}</td>
+                                        <td>{{item.dht.DHT1}}</td>
+                                        <td>{{item.dht.DHT2}}</td>
+                                        <td>{{item.dht.DHT3}}</td>
+                                        <td>{{item.dht.DHT4}}</td>
+
+                                    </tr>
+
+
+                                </table>
+
+                                <!-- <div class="row">
+                                    <div class="col-lg-12"> -->
+                                        <pagination-controls responsive="true" previousLabel="Précedent"
+                                            nextLabel="Suivant" (pageChange)="p = $event"></pagination-controls>
+                                    <!-- </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #noData>
+
+    Erreur de chargement
+
+</ng-template>

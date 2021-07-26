@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { DataFromBackModel } from '../models/data.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,8 @@ export class TemperatureService {
 
   constructor(private http: HttpClient) { }
 
-  getTemperature(): Observable<any> {
-    return this.http.get(this.tempUrl);
+  getTemperature(): Observable<DataFromBackModel[]> {
+    return this.http.get<DataFromBackModel[]>(this.tempUrl);
   }
 
 

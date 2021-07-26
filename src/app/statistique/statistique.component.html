@@ -1,0 +1,149 @@
+<div class="col-lg-12">
+
+    <!-- Default Card Example -->
+    <div class="card mb-4">
+        <div class="card-header">
+            Filtre
+        </div>
+        <div class="card-body">
+            <form [formGroup]="checkBoxForm">
+                <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                    <!-- <div> -->
+                    <!-- SECTION TAB -->
+                    <div class="card-item">
+                        <label for="tab1">Tab1</label>
+                        <input type="checkbox" name="" id="tab1" formControlName="Tab1">
+                    </div>
+                    <div class="card-item">
+                        <label for="tab2">Tab2</label>
+                        <input type="checkbox" name="" id="tab2" formControlName="Tab2">
+                    </div>
+                    <div class="card-item">
+                        <label for="tab3">Tab3</label>
+                        <input type="checkbox" name="" id="tab3" formControlName="Tab3">
+                    </div>
+                    <div class="card-item">
+                        <label for="tab4">Tab4</label>
+                        <input type="checkbox" name="" id="tab4" formControlName="Tab4">
+                    </div>
+                    <div class="card-item">
+                        <label for="tab5">Tab5</label>
+                        <input type="checkbox" name="" id="tab5" formControlName="Tab5">
+                    </div>
+
+                    <!-- SECTION TV -->
+                    <div class="card-item">
+                        <label for="tv1">Tv1</label>
+                        <input type="checkbox" name="" id="tv1" formControlName="Tv1">
+                    </div>
+                    <div class="card-item">
+                        <label for="tv2">Tv2</label>
+                        <input type="checkbox" name="" id="tv2" formControlName="Tv2">
+                    </div>
+                    <div class="card-item">
+                        <label for="tv3">Tv3</label>
+                        <input type="checkbox" name="" id="tv3" formControlName="Tv3">
+                    </div>
+                    <div class="card-item">
+                        <label for="tv4">Tv4</label>
+                        <input type="checkbox" name="" id="tv4" formControlName="Tv4">
+                    </div>
+                    <div class="card-item">
+                        <label for="tv5">Tv5</label>
+                        <input type="checkbox" name="" id="tv5" formControlName="Tv5">
+                    </div>
+
+                    <!-- SECTION TE -->
+                    <div class="card-item">
+                        <label for="te1">Te1</label>
+                        <input type="checkbox" name="" id="te1" formControlName="Te1">
+                    </div>
+                    <div class="card-item">
+                        <label for="te2">Te2</label>
+                        <input type="checkbox" name="" id="te2" formControlName="Te2">
+                    </div>
+                    <div class="card-item">
+                        <label for="te3">Te3</label>
+                        <input type="checkbox" name="" id="te3" formControlName="Te3">
+                    </div>
+
+                    <!-- SECTION TS -->
+                    <div class="card-item">
+                        <label for="ts1">Ts1</label>
+                        <input type="checkbox" name="" id="ts1" formControlName="Ts1">
+                    </div>
+                    <div class="card-item">
+                        <label for="ts2">Ts2</label>
+                        <input type="checkbox" name="" id="ts2" formControlName="Ts2">
+                    </div>
+                    <div class="card-item">
+                        <label for="ts3">Ts3</label>
+                        <input type="checkbox" name="" id="ts3" formControlName="Ts3">
+                    </div>
+
+                    <!-- SECTION HUMIDITIE -->
+                    <div class="card-item">
+                        <label for="h0">H1</label>
+                        <input type="checkbox" name="" id="h0" formControlName="DHT0">
+                    </div>
+                    <div class="card-item">
+                        <label for="h1">H2</label>
+                        <input type="checkbox" name="" id="h1" formControlName="DHT1">
+                    </div>
+                    <div class="card-item">
+                        <label for="h2">H3</label>
+                        <input type="checkbox" name="" id="h2" formControlName="DHT2">
+                    </div>
+                    <div class="card-item">
+                        <label for="h3">H4</label>
+                        <input type="checkbox" name="" id="h3" formControlName="DHT3">
+                    </div>
+                    <div class="card-item">
+                        <label for="h4">H5</label>
+                        <input type="checkbox" name="" id="h4" formControlName="DHT4">
+                    </div>
+                </div>
+            </form>
+
+            <form [formGroup]="form">
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label for="">Date de début</label>
+                        <input type="date" name="" id="" formControlName="dateDebut">
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="">Date fin</label>
+                        <input type="date" name="" id="" formControlName="dateFin">
+                    </div>
+                    <div class="col-lg-4">
+                        <button class="btn btn-primary" (click)="onSubmit()">Appliquer</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Basic Card Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Graphe</h6>
+        </div>
+        <div class="card-body">
+            <div class="">
+
+                <div class="my-chart-area">
+
+                    <canvas class="chartjs-render-monitor" style="display: block; height: 320px; width: 782px;"
+                        width="977" height="400" baseChart [options]="lineChartOptions" [datasets]="lineChartData"
+                        [labels]="lineChartLabels" [colors]="lineChartColors" [legend]="lineChartLegend"
+                        [chartType]="lineChartType" [plugins]="lineChartPlugins">
+                    </canvas>
+
+                    <!-- <canvas id="myAreaChart" style="display: block; height: 320px; width: 782px;"
+                                class="chartjs-render-monitor" width="977" height="400"></canvas> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
